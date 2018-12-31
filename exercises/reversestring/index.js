@@ -17,7 +17,6 @@ function reverse(str) {
    reversed = character + reversed;
   }
   return reversed
-
 }
 
 function reverse(str) {
