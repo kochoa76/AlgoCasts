@@ -6,7 +6,29 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
+//
 
-function palindrome(str) {}
+//not the best way of solving it because it compares the first character with mirrored character and once you get to the center
+//character you have already checked all the characters, but the interpreter later starts comparing the second half yet again, inefficient.
+// function palindrome(str) {
+//   return str.split('').every((char, i) => char === str[str.length - i - 1]);
+// }
+
+function palindrome(str) {
+  let reversed = str.split('').reverse().join('')
+  return str === reversed;
+}
+palindrome('pennep')
+
+// function palindrome(str) {
+//   let newStr = str.split('').reduce((a,b) => b + a, '')
+//   if (newStr === str){
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+
+
 
 module.exports = palindrome;
