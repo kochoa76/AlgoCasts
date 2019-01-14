@@ -10,6 +10,8 @@
 
 // word.replace(/[^\w]/g, "").toLowerCase();  cleans up the word so that it leaves just words nothing else like !!!
 
+
+//Solution 1 
 function buildCharMap(string){
   let charMap = {};
 
