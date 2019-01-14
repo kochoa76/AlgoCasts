@@ -10,10 +10,7 @@
 
 
 
-
-
-
-//Solution 2 
+Solution 2 not yet pushed, did commit
 function chunk(array, size) {
   let index = 0;
   const chunked = []
