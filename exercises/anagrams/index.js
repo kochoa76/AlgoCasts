@@ -10,31 +10,42 @@
 
 // word.replace(/[^\w]/g, "").toLowerCase();  cleans up the word so that it leaves just words nothing else like !!!
 
-
-//Solution 1 
-function buildCharMap(string){
-  let charMap = {};
-
-  for (let char of string.replace(/[^\w]/g, "").toLowerCase()){
-    charMap[char] = charMap[char] + 1 || 1
-  }
-  return charMap;
-}
-
+//Solution 2
 function anagrams(stringA, stringB) {
-  const aCharMap = buildCharMap(stringA)
-  const bCharMap = buildCharMap(stringB)
-
-  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false;
-  }
-
-  for (let char in aCharMap) {
-    if (aCharMap[char] !== bCharMap[char]) {
-      return false;
-    }
-  }
-  return true;
+  return cleanString(stringA) === cleanString(stringB)
 }
+
+function cleanString(string) {
+
+  return string.replace(/[^\w]/g, "").toLowerCase().split("").sort().join('')
+
+}
+
+
+//Solution 1
+// function buildCharMap(string){
+//   let charMap = {};
+//
+//   for (let char of string.replace(/[^\w]/g, "").toLowerCase()){
+//     charMap[char] = charMap[char] + 1 || 1
+//   }
+//   return charMap;
+// }
+//
+// function anagrams(stringA, stringB) {
+//   const aCharMap = buildCharMap(stringA)
+//   const bCharMap = buildCharMap(stringB)
+//
+//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//     return false;
+//   }
+//
+//   for (let char in aCharMap) {
+//     if (aCharMap[char] !== bCharMap[char]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
 module.exports = anagrams;
