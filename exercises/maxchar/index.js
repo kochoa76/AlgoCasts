@@ -23,7 +23,7 @@ function maxChar(str) {
     return maxChar ;
 
 }
-maxChar('Hello World!')
+
 
 // function maxChar(str) {
 //   let chars = {}
@@ -47,64 +47,64 @@ maxChar('Hello World!')
 // In case of ties, return both
 // We also want to optimize for reads of n
 
-var words = ['a', 'b', 'c', 'd', 'a', 'b', 'c', 'a', 'b', 'c', 'a']
-
-function countWords( arr) {
-  let chars = {}
-  let charValues;
-
-   for ( let char of arr) {
-    chars[char] = chars[char] + 1 || 1;
-   }
-
-return chars
-}
-
-// chars = { a: 4, b: 3, c: 3, d: 1 }
-
-let wordCounts = countWords(words)
-let nthWords = []
-
-function findNth(freq){
-  for (const [key, val] of Object.entries(wordCounts)) {
-    if (val == freq) {
-      nthWords.push(key);
-    }
-  }
-  return nthWords
-}
-
-findNth(1); // returns 'd'
-findNth(4); // returns 'a'
-
-//other way
-
-var words = ['a', 'b', 'c', 'd', 'a', 'b', 'c', 'a', 'b', 'c', 'a']
-
-function countWords( arr) {
-  let chars = {}
-  let charValues;
-
-   for ( let char of arr) {
-    chars[char] = chars[char] + 1 || 1;
-   }
-
-return chars
-}
-
-// chars = { a: 4, b: 3, c: 3, d: 1 }
-
-let wordCounts = countWords(words)
-let nthWords = []
-
-function findNth(freq){
-  for ( let char in wordCounts){
-    if (wordCounts[char] == freq) {
-      nthWords.push(char);
-    }
-  }
-  return nthWords
-}
+// var words = ['a', 'b', 'c', 'd', 'a', 'b', 'c', 'a', 'b', 'c', 'a']
+//
+// function countWords( arr) {
+//   let chars = {}
+//   let charValues;
+//
+//    for ( let char of arr) {
+//     chars[char] = chars[char] + 1 || 1;
+//    }
+//
+// return chars
+// }
+//
+// // chars = { a: 4, b: 3, c: 3, d: 1 }
+//
+// let wordCounts = countWords(words)
+// let nthWords = []
+//
+// function findNth(freq){
+//   for (const [key, val] of Object.entries(wordCounts)) {
+//     if (val == freq) {
+//       nthWords.push(key);
+//     }
+//   }
+//   return nthWords
+// }
+//
+// findNth(1); // returns 'd'
+// findNth(4); // returns 'a'
+//
+// //other way
+//
+// var words = ['a', 'b', 'c', 'd', 'a', 'b', 'c', 'a', 'b', 'c', 'a']
+//
+// function countWords( arr) {
+//   let chars = {}
+//   let charValues;
+//
+//    for ( let char of arr) {
+//     chars[char] = chars[char] + 1 || 1;
+//    }
+//
+// return chars
+// }
+//
+// // chars = { a: 4, b: 3, c: 3, d: 1 }
+//
+// let wordCounts = countWords(words)
+// let nthWords = []
+//
+// function findNth(freq){
+//   for ( let char in wordCounts){
+//     if (wordCounts[char] == freq) {
+//       nthWords.push(char);
+//     }
+//   }
+//   return nthWords
+// }
 
 
 module.exports = maxChar;

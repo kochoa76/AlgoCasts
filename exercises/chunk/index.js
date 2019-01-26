@@ -9,7 +9,7 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 
-// 
+//
 // Solution 2 not yet pushed, did commit
 // function chunk(array, size) {
 //   let index = 0;
@@ -23,7 +23,7 @@
 // }
 
 
-Solution 1
+//Solution 1
 function chunk(array, size) {
   const chunked = [];
 
