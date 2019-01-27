@@ -15,58 +15,60 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 //four for loops inside a while loop that builds out the sides of the matrix , not building out middle number
+
 function matrix(n) {
 
   let results = []
 
-  for ( var i =0; i < n; i++){
+  for ( let i = 0; i < n ; i++) {
     results.push([])
   }
+
   let counter = 1;
   let startColumn = 0;
-  let endColumn = n -1
+  let endColumn = n-1;
   let startRow = 0;
-  let endRow = n - 1
+  let endRow = n-1;
 
-  while( startColumn <= endColumn && startRow <= endRow) {
-    //for the top row
-    for ( var i= startColumn; i <= endColumn; i++) {
-      results[startRow][i] = counter
+  while(startColumn <= endColumn && startRow <= endRow) {
+
+    // top row or startRow -- this is what's stagnant , not iterating
+    //
+
+    for ( let i = startColumn; i <= endColumn; i++ ) {
+      results[startRow][i] = counter;
       counter++
     }
-    startRow++;
+    console.log(results)
+    startRow++
 
-    //Right column (last two )
-    for ( let i= startRow; i <=endRow; i++) {
-      results[i][endColumn] = counter
+    //right column or end column-- this is what's stagnant, not iterating.
+    for ( let i = startRow; i <= endRow; i++ ) {
+      results[i][endColumn] = counter;
+      counter++;
+    }
+    endColumn--
+//bottom row or endRow -- this is what's stagnant, not iterating
+    for ( let i =endColumn; i >=startColumn; i--) {
+      results[endRow][i] = counter;
       counter++
     }
-    endColumn--;
+    endRow--
 
-
-    //Bottom row
-    for ( let i = endColumn; i >= startColumn; i--) {
-      results[endRow][i] = counter
+    //left column or startColumn, this is what's stagnant not iterating
+    for ( let i = endRow; i >= startRow; i--) {
+      results[i][startColumn] = counter;
       counter++
     }
-
-    endRow--;
-
-    //for loop for start column
-    for ( let i = endRow; i >= startRow; i-- ) {
-      results[i][startColumn] = counter
-      counter++
-    }
-
     startColumn++
 
-    //all columns and rows both start and finsih should be 1 now so it should be pointing to the center number in the matrix
-
-
   }
-
-  return results; 
-
+  return results;
 }
+
+//notes: the pattern in the four for loops are alternating.
+// when you change the counter for startRow++ or endColumn-- , that is what we're starting with for the for loop.
+
+//start the problem with results[startRow][i] and that will set you straight for the rest of the problem. 
 
 module.exports = matrix;

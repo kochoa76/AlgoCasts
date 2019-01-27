@@ -26,7 +26,7 @@ function memoize(fn) {
 // if you haven't seen it call the fn right away and then store it in cache object
     let result = fn.apply(this, args)
     cache[args] = result;
-//return result 
+//return result
     return result
 
   }
@@ -44,8 +44,8 @@ function slowFib(n){
 
 let fib = memoize(slowFib)
 
-//iterative solution
-// function fib(n) {
+// iterative solution
+// function fib(n)  {
 //   const result = [ 0, 1 ]
 //
 //   for ( var i =2; i <= n; i++) {
@@ -58,6 +58,6 @@ let fib = memoize(slowFib)
 //   return result[result.length - 1];
 //
 // }
-//
-//
+
+
  module.exports = fib;
