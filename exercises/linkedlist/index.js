@@ -16,9 +16,56 @@ class LinkedList {
     this.head = null
   }
 
+  // insert the first node or head node of linkedlist without replacing the possible current head node
   insertFirst(data){
     const node = new Node(data, this.head)
     this.head = node;
+  }
+
+  //return amount of nodes in linkedlist
+  size() {
+    let counter = 0;
+    let node = this.head
+    while(node) {
+      counter++
+      node = node.next
+    }
+    return counter
+  }
+  //return first node of linkedlist
+  getFirst() {
+    return this.head
+  }
+
+  //return last node of linkedlist
+  getLast(){
+
+  let node = this.head
+  if (!node) {
+    return null
+  }
+
+  while(node) {
+    if (!node.next) {
+      return node
+    }
+
+  return node = node.next
+    }
+  }
+
+  //clear all nodes
+  clear(){
+    this.head = null
+  }
+
+  //remove only first node of linkedList
+  removeFirst(){
+    if (!this.head) {
+      return;
+    }
+
+    this.head = this.head.next
   }
 }
 
