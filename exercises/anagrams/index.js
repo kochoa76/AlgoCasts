@@ -22,6 +22,18 @@
 // }
 
 
+//two sum
+// sum of ([2, 7, 4], 9) should return [0, 1] or indexes of elements that add up to target
+var twoSum = function(nums, target) {
+     for ( var i =0; i < nums.length; i++) {
+         for ( var j = i+1; j < nums.length; j++) {
+             if (nums[j] === target - nums[i]) {
+                 return [i, j]
+             }
+         }
+    }
+}
+
 // Solution 1
 function buildCharMap(string){
   let charMap = {};
